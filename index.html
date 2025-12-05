@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>РџСЂРѕС„РёР»СЊ РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ</title>
+    <title>Профиль программистов</title>
     <style>
         body {
             font-family: monospace;
@@ -26,56 +26,258 @@
             font-weight: bold;
         }
         .button {
-            background: #4CAF50;  /* Изменён цвет фона на зелёный */
-            color: white;         /* Изменён цвет текста на белый */
-            border: 2px solid #388E3C;  /* Изменена рамка на тёмно-зелёную */
+            background: #4CAF50;
+            color: white;
+            border: 2px solid #388E3C;
             padding: 10px 20px;
             font-family: monospace;
             font-size: 16px;
             cursor: pointer;
             margin: 20px 0;
             transition: all 0.3s;
-            border-radius: 5px;   /* Добавлены скруглённые углы */
+            border-radius: 5px;
         }
         .button:hover {
-            background: #388E3C;  /* Изменён цвет при наведении на тёмно-зелёный */
+            background: #388E3C;
             color: white;
             transform: scale(1.05);
+        }
+        /* Стили для соцсетей */
+        .social-login {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+        .social-login h3 {
+            color: #222;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .social-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .social-btn:active {
+            transform: translateY(-1px);
+        }
+        .btn-vk { background: #4C75A3; }
+        .btn-github { background: #333; }
+        .btn-google { background: #DB4437; }
+        .btn-yandex { background: #FFCC00; color: #000; }
+        .btn-telegram { background: #0088cc; }
+        .btn-discord { background: #5865F2; }
+        .social-icon {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .status-message {
+            padding: 12px;
+            background: #e8f5e9;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+            border: 1px solid #c8e6c9;
+            min-height: 20px;
+            transition: all 0.3s;
+        }
+        .loading {
+            background: #fff3cd !important;
+            border-color: #ffeaa7 !important;
+        }
+        .success {
+            background: #d4edda !important;
+            border-color: #c3e6cb !important;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>РЎРўРЈР”Р•РќРўР«-РџР РћР“Р РђРњРњРРЎРўР«</h1>
-        <p>РўРµС…РЅРёРєСѓРј | 3 РєСѓСЂСЃ | РџРѕСЃС‚СѓРїРёР»Рё: 2023</p>
+        <h1>СТУДЕНТЫ-ПРОГРАММИСТЫ</h1>
+        <p>Техникум | 3 курс | Поступили: 2023</p>
     </header>
     
     <div class="profile">
-        <h3>Р РѕСЃРёРЅРµС† Р‘РѕСЂРёСЃ РЎРµСЂРіРµРµРІРёС‡</h3>
-        <p>РџСЂРѕРіСЂР°РјРјРёСЃС‚. РЎС‚СѓРґРµРЅС‚ 3 РєСѓСЂСЃР° С‚РµС…РЅРёРєСѓРјР°.</p>
+        <h3>Росинец Борис Сергеевич</h3>
+        <p>Программист. Студент 3 курса техникума.</p>
     </div>
     
     <div class="profile">
-        <h3>Р©РµСЂР±Р°РєРѕРІ Р“СЂРёРіРѕСЂРёР№ Р’РёРєС‚РѕСЂРѕРІРёС‡</h3>
-        <p>РџСЂРѕРіСЂР°РјРјРёСЃС‚. РЎС‚СѓРґРµРЅС‚ 3 РєСѓСЂСЃР° С‚РµС…РЅРёРєСѓРјР°.</p>
+        <h3>Щербаков Григорий Викторович</h3>
+        <p>Программист. Студент 3 курса техникума.</p>
     </div>
     
-    <button class="button" onclick="alert('РџСЂРѕРіСЂР°РјРјРёСЃС‚С‹ РІ СЃС‚СЂРѕСЋ!')">
-        РџРѕРґС‚РІРµСЂРґРёС‚СЊ СЃС‚Р°С‚СѓСЃ
+    <!-- Блок входа через соцсети -->
+    <div class="social-login">
+        <h3>?? Вход через социальные сети</h3>
+        
+        <div class="social-grid">
+            <button class="social-btn btn-vk" onclick="simulateLogin('VK')">
+                <span class="social-icon">VK</span>
+                ВКонтакте
+            </button>
+            
+            <button class="social-btn btn-github" onclick="simulateLogin('GitHub')">
+                <span class="social-icon">Git</span>
+                GitHub
+            </button>
+            
+            <button class="social-btn btn-google" onclick="simulateLogin('Google')">
+                <span class="social-icon">G</span>
+                Google
+            </button>
+            
+            <button class="social-btn btn-yandex" onclick="simulateLogin('Yandex')">
+                <span class="social-icon">Я</span>
+                Яндекс
+            </button>
+            
+            <button class="social-btn btn-telegram" onclick="simulateLogin('Telegram')">
+                <span class="social-icon">TG</span>
+                Telegram
+            </button>
+            
+            <button class="social-btn btn-discord" onclick="simulateLogin('Discord')">
+                <span class="social-icon">D</span>
+                Discord
+            </button>
+        </div>
+        
+        <div class="status-message" id="loginStatus">
+            Выберите социальную сеть для входа
+        </div>
+    </div>
+    
+    <button class="button" onclick="showMessage('Программисты в строю! ??')">
+        Подтвердить статус
     </button>
     
-    <p class="tech">РћР±Р° СѓС‡РёРјСЃСЏ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЋ РІ С‚РµС…РЅРёРєСѓРјРµ.</p>
+    <p class="tech">Оба учимся программированию в техникуме.</p>
 
     <script>
-        // Упрощённый скрипт, так как анимация теперь в CSS
+        // Основная кнопка
         const button = document.querySelector('.button');
-        
-        // Обработчик для дополнительного эффекта при клике
         button.addEventListener('click', function() {
             this.style.transform = 'scale(0.95)';
+            setTimeout(() => this.style.transform = 'scale(1)', 150);
+        });
+
+        // Функция показа сообщения
+        function showMessage(text) {
+            alert(text);
+        }
+
+        // Визуальная имитация входа
+        function simulateLogin(provider) {
+            const statusEl = document.getElementById('loginStatus');
+            const allButtons = document.querySelectorAll('.social-btn');
+            
+            // Блокируем все кнопки
+            allButtons.forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.6';
+                btn.style.cursor = 'not-allowed';
+            });
+            
+            // Показываем процесс загрузки
+            statusEl.textContent = `? Подключаемся к ${provider}...`;
+            statusEl.classList.add('loading');
+            statusEl.classList.remove('success');
+            
+            // Анимация точек
+            let dots = 0;
+            const loadingInterval = setInterval(() => {
+                dots = (dots + 1) % 4;
+                statusEl.textContent = `? Авторизация через ${provider}${'.'.repeat(dots)}`;
+            }, 500);
+            
+            // Имитация задержки сети
             setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
+                clearInterval(loadingInterval);
+                
+                // Успешный вход
+                statusEl.textContent = `? Успешный вход через ${provider}!`;
+                statusEl.classList.remove('loading');
+                statusEl.classList.add('success');
+                
+                // Подсветка выбранной кнопки
+                const activeBtn = document.querySelector(`.social-btn[onclick*="${provider}"]`);
+                if (activeBtn) {
+                    activeBtn.style.boxShadow = '0 0 0 3px rgba(76, 175, 80, 0.4)';
+                    activeBtn.style.transform = 'scale(1.05)';
+                }
+                
+                // Автоматический сброс через 3 секунды
+                setTimeout(() => {
+                    resetLoginForm();
+                }, 3000);
+                
+            }, 2000 + Math.random() * 1000); // Случайная задержка 2-3 секунды
+        }
+        
+        // Сброс формы
+        function resetLoginForm() {
+            const statusEl = document.getElementById('loginStatus');
+            const allButtons = document.querySelectorAll('.social-btn');
+            
+            allButtons.forEach(btn => {
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                btn.style.cursor = 'pointer';
+                btn.style.boxShadow = '';
+                btn.style.transform = '';
+            });
+            
+            statusEl.textContent = 'Выберите социальную сеть для входа';
+            statusEl.classList.remove('loading', 'success');
+        }
+        
+        // Эффекты при наведении на кнопки соцсетей
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                if (!this.disabled) {
+                    this.style.filter = 'brightness(1.1)';
+                }
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                if (!this.disabled) {
+                    this.style.filter = 'brightness(1)';
+                }
+            });
+        });
+        
+        // Защита от двойного клика
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.disabled) return false;
+            });
         });
     </script>
 </body>
