@@ -26,19 +26,21 @@
             font-weight: bold;
         }
         .button {
-            background: #222;
-            color: #0f0;
-            border: 2px solid #0f0;
+            background: #4CAF50;  /* Изменён цвет фона на зелёный */
+            color: white;         /* Изменён цвет текста на белый */
+            border: 2px solid #388E3C;  /* Изменена рамка на тёмно-зелёную */
             padding: 10px 20px;
             font-family: monospace;
             font-size: 16px;
             cursor: pointer;
             margin: 20px 0;
             transition: all 0.3s;
+            border-radius: 5px;   /* Добавлены скруглённые углы */
         }
         .button:hover {
-            background: #0f0;
-            color: #222;
+            background: #388E3C;  /* Изменён цвет при наведении на тёмно-зелёный */
+            color: white;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -65,15 +67,15 @@
     <p class="tech">РћР±Р° СѓС‡РёРјСЃСЏ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЋ РІ С‚РµС…РЅРёРєСѓРјРµ.</p>
 
     <script>
-        // Эффект при наведении на кнопку
+        // Упрощённый скрипт, так как анимация теперь в CSS
         const button = document.querySelector('.button');
         
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
+        // Обработчик для дополнительного эффекта при клике
+        button.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
         });
     </script>
 </body>
